@@ -3,7 +3,7 @@ const {ClarifaiStub, grpc} = require("clarifai-nodejs-grpc");
 const stub = ClarifaiStub.grpc();
 
 const metadata = new grpc.Metadata();
-metadata.set("authorization", "Key 34360b7caa7741948988fb600637ebf2" + process.env.PAT_KEY);
+metadata.set("authorization", "Key 34360b7caa7741948988fb600637ebf2");
 
 
 const handleApiCall = (req,res) => { 
@@ -11,6 +11,7 @@ const handleApiCall = (req,res) => {
         {
             // Change these to whatever model and image URL you want to use
             model_id: "face-detection",
+            version_id: "6dc7e46bc9124c5c8824be4822abe105", 
             inputs: [{data: {image: {url: req.body.input}}}]
         },
         metadata,
