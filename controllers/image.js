@@ -10,8 +10,7 @@ const handleApiCall = (req,res) => {
     stub.PostModelOutputs(
         {
             // Change these to whatever model and image URL you want to use
-            model_id: "face-detection",
-            version_id: "6dc7e46bc9124c5c8824be4822abe105", 
+            model_id: "face-detection", 
             inputs: [{data: {image: {url: req.body.input}}}]
         },
         metadata,
