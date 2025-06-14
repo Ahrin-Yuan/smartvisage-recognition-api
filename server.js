@@ -8,13 +8,16 @@ const register = require('./controllers/register');
 const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
-const port = process.env.PORT || 8000
 
+//bindi your HTTP server to the port defined by the PORT environment variable.
+const port = process.env.PORT || 8000;
+
+// DB Connection (with Knex library)
 const db = knex({ 
   client: 'pg',
   connection: {
     connectionString: process.env.DATABASE_URL,
-    ssl: { rejectUnauthorized: false },
+    //ssl: { rejectUnauthorized: false },
     host: process.env.DATABASE_HOST,
     port: 5432,
     user: process.env.DATABASE_USER,
@@ -23,12 +26,12 @@ const db = knex({
   },
 });
 
-
+// Create express app
 const app = express();
 
-
-app.use(bodyParser.json());
-app.use(cors());
+// Middleware
+app.use(bodyParser.json()); // old way body-parser(for edu purposes)
+app.use(cors()); // Allow cross-origin requests
 
 app.get('/', (req,res) =>{
     res.send('Success!');
@@ -44,7 +47,7 @@ app.get('/profile/:id', (req,res) => {profile.handleProfileGet(req, res, db)})
 app.put('/image', (req,res) => {image.handleImage(req, res, db)})
 app.post('/imageurl', (req,res) => {image.handleApiCall(req, res)})
 
-
+// Listen on port
 app.listen(port, () => {
   console.log(`app listening on port ${port}`)
 })
