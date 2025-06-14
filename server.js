@@ -51,7 +51,7 @@ app.put('/image', (req,res) => {image.handleImage(req, res, db)})
 app.post('/imageurl', (req, res) => {
   try {
     const { input } = req.body;
-    clarifai.handleClarifaiApi(req, res, input);
+    clarifai.handleApiCall(req, res, input);
   } catch (err) {
     console.error("Clarifai API error:", error);
     res

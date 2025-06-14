@@ -7,8 +7,7 @@ dotenv.config();
 const ACCESS_TOKEN = process.env.CLARIFAI_PAT;
 
 
-
-export const handleClarifaiApi = (req, res, input) => {
+const handleApiCall = (req, res, input) => {
   if (!input) {
     return res.status(400).json({ error: "No image URL provided" });
   }
@@ -96,3 +95,7 @@ export const handleClarifaiApi = (req, res, input) => {
     }
   );
 };
+
+module.exports = {
+    handleApiCall: handleApiCall
+}
