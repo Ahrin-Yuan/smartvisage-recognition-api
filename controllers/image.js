@@ -1,4 +1,4 @@
-const {ClarifaiStub, grpc} = require("clarifai-nodejs-grpc");
+/*const {ClarifaiStub, grpc} = require("clarifai-nodejs-grpc");
 
 const stub = ClarifaiStub.grpc();
 
@@ -32,7 +32,7 @@ const handleApiCall = (req,res) => {
                 res.json(response)
         }
     );
-}
+}*/
 
 
 const handleImage = (req, res, db)=>{
