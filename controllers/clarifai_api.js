@@ -2,7 +2,6 @@ const { ClarifaiStub, grpc } = require("clarifai-nodejs-grpc");
 
 const ACCESS_TOKEN = process.env.CLARIFAI_PAT;
 
-
 const handleApiCall = (req, res, input) => {
   if (!input) {
     return res.status(400).json({ error: "No image URL provided" });

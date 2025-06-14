@@ -53,7 +53,7 @@ app.post('/imageurl', (req, res) => {
     const { input } = req.body;
     clarifai.handleApiCall(req, res, input);
   } catch (err) {
-    console.error("Clarifai API error:", error);
+    console.error("Clarifai API error:", err);
     res
       .status(500)
       .json({ error: "Internal server error processing Clarifai request" });
