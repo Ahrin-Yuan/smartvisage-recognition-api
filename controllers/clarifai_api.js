@@ -1,8 +1,6 @@
-require('dotenv').config()
+require('dotenv').config();
 
 import { ClarifaiStub, grpc } from "clarifai-nodejs-grpc";
-
-dotenv.config();
 
 const ACCESS_TOKEN = process.env.CLARIFAI_PAT;
 
