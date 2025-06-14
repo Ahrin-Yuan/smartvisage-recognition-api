@@ -79,10 +79,10 @@ const handleApiCall = (req, res, input) => {
           name: region.data.concepts[0].name,
           value: region.data.concepts[0].value.toFixed(4),
           boundingBox: boundingBox,
-          topRow: boundingBox.top_row.toFixed(3),
-          leftCol: boundingBox.left_col.toFixed(3),
-          bottomRow: boundingBox.bottom_row.toFixed(3),
-          rightCol: boundingBox.right_col.toFixed(3),
+          topRow: boundingBox.top_row,
+          leftCol: boundingBox.left_col,
+          bottomRow: boundingBox.bottom_row,
+          rightCol: boundingBox.right_col,
         };
       });
 
