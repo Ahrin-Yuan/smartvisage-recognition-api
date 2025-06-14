@@ -13,6 +13,7 @@ const handleApiCall = (req, res, input) => {
   const APP_ID = "My-First-Application";
   // Change these to whatever model and image URL you want to use
   const MODEL_ID = "face-detection";
+  const MODEL_VERSION_ID = '6dc7e46bc9124c5c8824be4822abe105';
   const IMAGE_URL = input;
   // To use a local file, assign the location variable
   // const IMAGE_FILE_LOCATION = 'YOUR_IMAGE_FILE_LOCATION_HERE'
